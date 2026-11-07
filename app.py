@@ -637,24 +637,56 @@ function aim(ev) {{
   if (drag.plane === "sagittal") {{ state.j = hit[0]; state.k = hit[1]; }}
   refresh(false);
 }}
+let zoomPaint = 0;
 function zoomTo(dy) {{
-  state.zoom = Math.round(Math.max(1, Math.min(32, drag.zoom * Math.exp(dy / 160))) * 100) / 100;
+  if (!drag || drag.mode !== "zoom") return;
+  drag.moved = true;
+  const next = Math.round(Math.max(1, Math.min(32, drag.zoom * Math.exp(dy / 160))) * 100) / 100;
+  if (next === state.zoom) return;
+  state.zoom = next;
   state.i = drag.i;
   state.j = drag.j;
   state.k = drag.k;
-  refresh(false);
+  const now = performance.now();
+  if (now - zoomPaint > 40) {{
+    zoomPaint = now;
+    refresh(false);
+    return;
+  }}
+  place();
+  clearTimeout(drag.paint);
+  drag.paint = setTimeout(() => {{
+    zoomPaint = performance.now();
+    refresh(false);
+  }}, 40);
 }}
+function endZoom(ev) {{
+  if (!drag || drag.mode !== "zoom" || ev.button !== 1) return;
+  if (!drag.moved && performance.now() - drag.t < 40) return;
+  clearTimeout(drag.paint);
+  refresh(false);
+  drag = null;
+}}
+window.addEventListener("pointerdown", (ev) => {{
+  if (ev.button === 1) ev.preventDefault();
+}}, true);
+window.addEventListener("mousedown", (ev) => {{
+  if (ev.button === 1) ev.preventDefault();
+}}, true);
+window.addEventListener("auxclick", (ev) => {{
+  if (ev.button === 1) ev.preventDefault();
+}}, true);
 document.querySelectorAll(".frame").forEach((frame) => {{
   frame.addEventListener("pointerdown", (ev) => {{
     if (ev.button !== 1) return;
     const img = frame.querySelector("img");
     if (!img.naturalWidth) return;
-    drag = {{ mode: "zoom", plane: frame.dataset.plane, img, y: ev.clientY, zoom: state.zoom }};
+    drag = {{ mode: "zoom", plane: frame.dataset.plane, img, y: ev.clientY, zoom: state.zoom, t: performance.now(), moved: false }};
     aim(ev);
     drag.i = state.i;
     drag.j = state.j;
     drag.k = state.k;
-    frame.setPointerCapture(ev.pointerId);
+    if (frame.setPointerCapture) frame.setPointerCapture(ev.pointerId);
     ev.preventDefault();
   }});
   frame.addEventListener("mousedown", (ev) => {{
@@ -692,15 +724,19 @@ window.addEventListener("pointermove", (ev) => {{
 }});
 window.addEventListener("mousemove", (ev) => {{
   if (!drag) return;
-  if (drag.mode === "zoom") return;
+  if (drag.mode === "zoom") {{
+    zoomTo(drag.y - ev.clientY);
+    return;
+  }}
   if ((ev.buttons & 1) === 0) {{ drag = null; return; }}
   aim(ev);
 }});
-window.addEventListener("pointerup", (ev) => {{
-  if (drag && drag.mode === "zoom" && ev.button === 1) drag = null;
-}});
+window.addEventListener("pointerup", endZoom);
 window.addEventListener("mouseup", (ev) => {{
-  if (!drag || drag.mode === "zoom") return;
+  if (drag && drag.mode === "zoom") {{
+    endZoom(ev);
+    return;
+  }}
   drag = null;
 }});
 document.getElementById("mask").onchange = () => {{
