@@ -6,3 +6,6 @@ sample url provided below, this hints when image and mask arg is updated, applic
 * trame and quart repos are  provided below
 https://github.com/pallets/quart
 https://github.com/kitware/trame
+
++ don't use a database, use just a csv file for now to lookup file paths
++ be as minalistic as possible, follow guidelines from https://github.com/dietrichgebert/ponytail
