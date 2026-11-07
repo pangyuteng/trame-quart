@@ -8,4 +8,4 @@ https://github.com/pallets/quart
 https://github.com/kitware/trame
 
 + don't use a database, use just a csv file for now to lookup file paths
-+ be as minalistic as possible, follow guidelines from https://github.com/dietrichgebert/ponytail
++ be as minalistic as possible, follow guidelines from https://github.com/dietrichgebert/ponytail , dont read the whole ponytail repo just use this https://github.com/DietrichGebert/ponytail/blob/main/.grok-plugin/marketplace.json
