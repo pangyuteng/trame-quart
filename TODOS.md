@@ -9,3 +9,11 @@ https://github.com/kitware/trame
 
 + don't use a database, use just a csv file for now to lookup file paths
 + be as minalistic as possible, follow guidelines from https://github.com/dietrichgebert/ponytail , dont read the whole ponytail repo just use this https://github.com/DietrichGebert/ponytail/blob/main/.grok-plugin/marketplace.json
+
++ app will have 3 orthogal views
++ window level dropdown, please provide Lung, Abdomen, SoftTissue, Bone, Brain as options.
++ slider for changing opacity of overlay
++ segmentations.nii.gz could have more than 1 unique values, specify colormapping in py file
++ each views should have cross hairs
++ when on mouse down and move, cross hair needs to be updated, can 3 views needs to be updated as well.
++ app should have options to add a second row with 3 views with a different overlay. cross hair needs to be synced for a 6 views
