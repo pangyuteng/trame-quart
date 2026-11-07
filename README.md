@@ -1,6 +1,6 @@
 # trame-quart
 
-Slice viewer for a NIfTI image and a mask. `cases.csv` maps the URL ids to `.nii.gz` paths.
+Slice viewer for a NIfTI image and a mask. `cases.csv` has `case,image_path,seg_path,spleen_path`.
 
 ```bash
 docker build -t trame-quart .
@@ -9,6 +9,6 @@ docker run --rm -p 80:80 \
   trame-quart
 ```
 
-http://localhost/?image=case0&mask=case0_lung
+http://localhost/?image=case0
 
-The comma form works too: `/?image=case0,mask=case0_lung`
+Three orthogonal views share one crosshair. `mask` is `seg` or `spleen`. `overlay=0` hides it.
