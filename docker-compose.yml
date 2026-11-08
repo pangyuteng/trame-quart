@@ -1,0 +1,13 @@
+services:
+  trame-quart:
+    image: trame-quart
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app
+    command: python app.py 80
+    ports:
+      - "80:80"
+    volumes:
+      - $PWD:/app
+      - /mnt/hd2/data/Totalsegmentator_dataset:/mnt/hd2/data/Totalsegmentator_dataset:ro
