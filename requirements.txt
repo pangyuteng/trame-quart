@@ -1,6 +1,5 @@
-quart
 trame
-vtk
+trame-vuetify
+trame-vtk
 numpy
 pandas
-pillow

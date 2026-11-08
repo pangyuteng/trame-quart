@@ -1,6 +1,6 @@
 services:
   png:
-    image: trame-quart-png
+    image: png-renderer
     build:
       context: .
       dockerfile: Dockerfile
