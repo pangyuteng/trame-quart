@@ -23,6 +23,8 @@ https://github.com/kitware/trame
 
 ---
 
-application is working, curious why you opted to not use other trame widgets, for example vuetify and VtkLocalView. Instead you choose to generate pngs using numpy?
++  application is working, curious why you opted to not use other trame widgets, for example vuetify and VtkLocalView. Instead you choose to generate pngs using numpy?
 
-refactor to use VtkLocalView, for vtk offscreen support in Dockerfile see apt install and pip install here https://github.com/pangyuteng/public-misc/blob/master/docker/dcm/Dockerfile
++ refactor to use VtkLocalView, for vtk offscreen support in Dockerfile see apt install and pip install here https://github.com/pangyuteng/public-misc/blob/master/docker/dcm/Dockerfile
+
++ refactor so user can view in different browser tabs, each tab viewing different image case
