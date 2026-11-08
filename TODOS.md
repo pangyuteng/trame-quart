@@ -18,3 +18,7 @@ https://github.com/kitware/trame
 + when on mouse down and move, cross hair needs to be updated, can 3 views needs to be updated as well.
 + app should have options to add a second row with 3 views with a different overlay. cross hair needs to be synced for a 6 views
 + viewer should have option to view in radiologist or neuro view option.
+
+---
+
+application is working, curious why you opted to not use other trame widgets, for example vuetify and VtkLocalView. Instead you choose to generate pngs using numpy?

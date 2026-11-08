@@ -1,0 +1,11 @@
+case,image_path,seg_path,spleen_path
+case0,/mnt/hd2/data/Totalsegmentator_dataset/s1345/ct.nii.gz,/mnt/hd2/data/Totalsegmentator_dataset/s1345/segmentations.nii.gz,/mnt/hd2/data/Totalsegmentator_dataset/s1345/segmentations/spleen.nii.gz
+case1,/mnt/hd2/data/Totalsegmentator_dataset/s0000/ct.nii.gz,/mnt/hd2/data/Totalsegmentator_dataset/s0000/segmentations.nii.gz,/mnt/hd2/data/Totalsegmentator_dataset/s0000/segmentations/spleen.nii.gz
+case2,/mnt/hd2/data/Totalsegmentator_dataset/s0001/ct.nii.gz,/mnt/hd2/data/Totalsegmentator_dataset/s0001/segmentations.nii.gz,/mnt/hd2/data/Totalsegmentator_dataset/s0001/segmentations/spleen.nii.gz
+case3,/mnt/hd2/data/Totalsegmentator_dataset/s0002/ct.nii.gz,/mnt/hd2/data/Totalsegmentator_dataset/s0002/segmentations.nii.gz,/mnt/hd2/data/Totalsegmentator_dataset/s0002/segmentations/spleen.nii.gz
+case4,/mnt/hd2/data/Totalsegmentator_dataset/s0003/ct.nii.gz,/mnt/hd2/data/Totalsegmentator_dataset/s0003/segmentations.nii.gz,/mnt/hd2/data/Totalsegmentator_dataset/s0003/segmentations/spleen.nii.gz
+case5,/mnt/hd2/data/Totalsegmentator_dataset/s0004/ct.nii.gz,/mnt/hd2/data/Totalsegmentator_dataset/s0004/segmentations.nii.gz,/mnt/hd2/data/Totalsegmentator_dataset/s0004/segmentations/spleen.nii.gz
+case6,/mnt/hd2/data/Totalsegmentator_dataset/s0006/ct.nii.gz,/mnt/hd2/data/Totalsegmentator_dataset/s0006/segmentations.nii.gz,/mnt/hd2/data/Totalsegmentator_dataset/s0006/segmentations/spleen.nii.gz
+case7,/mnt/hd2/data/Totalsegmentator_dataset/s0009/ct.nii.gz,/mnt/hd2/data/Totalsegmentator_dataset/s0009/segmentations.nii.gz,/mnt/hd2/data/Totalsegmentator_dataset/s0009/segmentations/spleen.nii.gz
+case8,/mnt/hd2/data/Totalsegmentator_dataset/s0010/ct.nii.gz,/mnt/hd2/data/Totalsegmentator_dataset/s0010/segmentations.nii.gz,/mnt/hd2/data/Totalsegmentator_dataset/s0010/segmentations/spleen.nii.gz
+case9,/mnt/hd2/data/Totalsegmentator_dataset/s0011/ct.nii.gz,/mnt/hd2/data/Totalsegmentator_dataset/s0011/segmentations.nii.gz,/mnt/hd2/data/Totalsegmentator_dataset/s0011/segmentations/spleen.nii.gz
