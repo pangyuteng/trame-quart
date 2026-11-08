@@ -28,3 +28,6 @@ https://github.com/kitware/trame
 + refactor to use VtkLocalView, for vtk offscreen support in Dockerfile see apt install and pip install here https://github.com/pangyuteng/public-misc/blob/master/docker/dcm/Dockerfile
 
 + refactor so user can view in different browser tabs, each tab viewing different image case
++ fof volume caching maybe consider usage of `@lru_cache(maxsize=8)`
+
++ replace existing mouse interaction using vtkInteractorStyleImage see answer in https://github.com/Kitware/trame/discussions/869
