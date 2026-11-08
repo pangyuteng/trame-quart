@@ -8,7 +8,9 @@ https://github.com/pallets/quart
 https://github.com/kitware/trame
 
 + don't use a database, use just a csv file for now to lookup file paths
-+ be as minalistic as possible, follow guidelines from https://github.com/dietrichgebert/ponytail , dont read the whole ponytail repo just use this https://github.com/DietrichGebert/ponytail/blob/main/.grok-plugin/marketplace.json
++ be as minalistic as possible, follow ponytail and caveman guidelines from 
+    + https://github.com/DietrichGebert/ponytail/blob/main/AGENTS.md
+    + https://github.com/JuliusBrussee/caveman/blob/main/CLAUDE.md
 
 + app will have 3 orthogal views
 + window level dropdown, please provide Lung, Abdomen, SoftTissue, Bone, Brain as options.
@@ -22,3 +24,5 @@ https://github.com/kitware/trame
 ---
 
 application is working, curious why you opted to not use other trame widgets, for example vuetify and VtkLocalView. Instead you choose to generate pngs using numpy?
+
+refactor to use VtkLocalView, for vtk offscreen support in Dockerfile see apt install and pip install here https://github.com/pangyuteng/public-misc/blob/master/docker/dcm/Dockerfile
